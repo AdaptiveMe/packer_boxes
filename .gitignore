@@ -1,0 +1,4 @@
+
+.DS_Store
+windows/output-virtualbox-iso/
+windows/packer_cache/
