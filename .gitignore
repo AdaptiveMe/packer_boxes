@@ -1,5 +1,7 @@
 
 .DS_Store
 windows/output-virtualbox-iso/
+windows/output-vmware-iso/
 windows/packer_cache/
 *.box
+
