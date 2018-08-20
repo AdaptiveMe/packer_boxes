@@ -9,16 +9,15 @@
       "boot_wait": "2m",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "2h",
+      "ssh_wait_timeout": "6h",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
-      "guest_os_type": "windows8srv-64",
+      "guest_os_type": "windows9-64",
       "tools_upload_flavor": "windows",
       "disk_size": "{{user `disk_size`}}",
       "vnc_port_min": 5900,
       "vnc_port_max": 5980,
       "floppy_files": [
         "{{user `autounattend`}}",
-        "./scripts/fixnetwork.ps1",
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
         "./scripts/openssh.ps1",
@@ -29,7 +28,8 @@
         "RemoteDisplay.vnc.port": "5900",
         "memsize": "{{user `memory_size`}}",
         "numvcpus": "{{user `cpus`}}",
-        "scsi0.virtualDev": "lsisas1068"
+        "scsi0.virtualDev": "lsisas1068",
+        "virtualHW.version": "10"
       }
     },
     {
@@ -47,7 +47,6 @@
       "disk_size": "{{user `disk_size`}}",
       "floppy_files": [
         "{{user `autounattend`}}",
-        "./scripts/fixnetwork.ps1",
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
         "./scripts/openssh.ps1",
