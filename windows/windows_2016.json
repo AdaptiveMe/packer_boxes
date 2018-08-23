@@ -80,6 +80,10 @@
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "disk_size": 61440,
       "floppy_files": [
+        "floppy/drivers/virtio-win-0.1.135/viostor/2k16/amd64/*",
+        "floppy/drivers/virtio-win-0.1.135/NetKVM/2k16/amd64/*,",
+        "floppy/common/*",
+        "floppy/windows-2016-standard/*",
         "{{user `autounattend`}}",
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
