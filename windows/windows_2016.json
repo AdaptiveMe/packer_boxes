@@ -73,15 +73,12 @@
       "iso_checksum": "{{user `iso_checksum`}}",
       "headless": true,
       "boot_wait": "2m",
-      "ssh_username": "vagrant",
-      "ssh_password": "vagrant",
-      "ssh_wait_timeout": "6h",
+      "communicator": "winrm",
+      "winrm_username": "vagrant",
+      "winrm_password": "vagrant",
+      "winrm_timeout": "10000s",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "disk_size": 61440,
-
-      "http_directory": "http",
-      "vm_name": "windows_2016",
-
       "floppy_files": [
         "{{user `autounattend`}}",
         "./scripts/microsoft-updates.bat",
@@ -91,6 +88,7 @@
       ],
       "qemuargs": [
         [ "-m", "2048M" ],
+        [ "-cpu", "Westmere" ],
         [ "-smp", "cpus=2"]
       ]
     }
